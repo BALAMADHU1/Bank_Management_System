@@ -1,24 +1,33 @@
 public class Bank {
-private Account acc1;
-private Account acc2;
-private Account acc3;
+private final int MAX_ACCOUNTS = 100;
+private Account[] accounts = new Account[MAX_ACCOUNTS];
+private int count = 0;
 public void createAccount(Account acc) {
-    if (acc1 == null) acc1 = acc;
-    else if (acc2 == null) acc2 = acc;
-    else if (acc3 == null) acc3 = acc;
-    else System.out.println("Cannot create more than 3 accounts.");
+    if (count < MAX_ACCOUNTS) {
+        accounts[count++] = acc;
+        System.out.println("Account created successfully.");
+    } else {
+        System.out.println("Bank is full. Cannot add more accounts.");
+    }
 }
 
-public Account findAccount(String accNo) {
-    if (acc1 != null && acc1.getAccountNumber().equals(accNo)) return acc1;
-    if (acc2 != null && acc2.getAccountNumber().equals(accNo)) return acc2;
-    if (acc3 != null && acc3.getAccountNumber().equals(accNo)) return acc3;
+public Account findAccount(String accountNumber) {
+    for (int i = 0; i < count; i++) {
+        if (accounts[i].getAccountNumber().equals(accountNumber)) {
+            return accounts[i];
+        }
+    }
     return null;
 }
 
 public void showAllAccounts() {
-    if (acc1 != null) acc1.displayDetails();
-    if (acc2 != null) acc2.displayDetails();
-    if (acc3 != null) acc3.displayDetails();
+    if (count == 0) {
+        System.out.println("No accounts found.");
+        return;
+    }
+    for (int i = 0; i < count; i++) {
+        System.out.println("\nAccount #" + (i + 1));
+        accounts[i].displayDetails();
+    }
 }
 }
