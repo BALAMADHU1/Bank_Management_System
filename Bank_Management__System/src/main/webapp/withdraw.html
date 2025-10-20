@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Withdraw | SBI Bank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="bank-name">SBI Bank</div>
+    <div class="actions">
+      <div class="profile">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Admin Icon">
+        <div class="admin-info">
+          <div class="admin-name">Admin</div>
+          <div class="admin-email">admin@sbi.com</div>
+          <button onclick="location.href='login.html'">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="form-box">
+    <h2>Withdraw Amount</h2>
+    <form action="AccountServlet" method="post">
+      <input type="hidden" name="action" value="withdraw">
+      <input type="text" name="account_number" placeholder="Account Number" required>
+      <input type="text" name="amount" placeholder="Withdraw Amount" required>
+      <button type="submit" class="submit-btn">Withdraw</button>
+    </form>
+    <form action="dashboard.html"><button class="home-btn">Home</button></form>
+  </div>
+</body>
+</html>

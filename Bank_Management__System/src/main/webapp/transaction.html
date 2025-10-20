@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transactions | SBI Bank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="bank-name">SBI Bank</div>
+    <div class="actions">
+      <div class="profile">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Admin Icon">
+        <div class="admin-info">
+          <div class="admin-name">Admin</div>
+          <div class="admin-email">admin@sbi.com</div>
+          <button onclick="location.href='login.html'">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="form-box">
+    <h2>View Transactions</h2>
+    <form action="TransactionServlet" method="post">
+      <input type="text" name="account_number" placeholder="Account Number" required>
+      <button type="submit" class="submit-btn">View</button>
+    </form>
+    <form action="dashboard.html"><button class="home-btn">Home</button></form>
+  </div>
+</body>
+</html>

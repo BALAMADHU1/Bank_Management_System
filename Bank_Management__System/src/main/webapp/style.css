@@ -1,0 +1,81 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #d4e0ff, #f9f9ff);
+    margin: 0;
+    padding-top: 70px;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 12px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+header .bank-name { font-size: 24px; font-weight: bold; }
+
+/* Admin Profile */
+.actions { display: flex; align-items: center; gap: 10px; position: relative; }
+.profile img {
+    width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; cursor: pointer;
+}
+.profile .admin-info {
+    display: none; position: absolute; top: 50px; right: 0; background-color: #0055aa;
+    color: white; padding: 10px 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); z-index: 1010;
+}
+.profile:hover .admin-info { display: block; }
+.admin-info .admin-name { font-weight: bold; margin-bottom: 5px; }
+.admin-info .admin-email { font-size: 13px; margin-bottom: 10px; }
+.admin-info button {
+    background-color: #ff4d4d; border: none; color: white; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-size: 13px;
+}
+.admin-info button:hover { background-color: #cc0000; }
+
+/* Container & Forms */
+.container { margin-top: 80px; }
+h2 { color: #003366; font-weight: bold; margin-bottom: 20px; }
+.form-box { background-color: white; max-width: 420px; margin: 50px auto; padding: 35px 30px; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.15); }
+input, select { width: 90%; padding: 12px; margin: 12px 0; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; }
+button.submit-btn { background-color: #003366; color: white; border: none; padding: 12px 25px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+button.submit-btn:hover { background-color: #0055aa; }
+
+/* Home Button */
+.home-btn { background-color: #ff9900; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; margin-top: 20px; font-weight: bold; }
+.home-btn:hover { background-color: #cc7a00; }
+
+/* Tables */
+table { margin: 25px auto; border-collapse: collapse; width: 75%; background-color: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+table th, table td { padding: 14px; border-bottom: 1px solid #ddd; text-align: center; }
+table th { background-color: #003366; color: white; }
+
+/* Messages */
+h3.success { color: green; }
+h3.error { color: red; }
+
+/* Dashboard Buttons */
+.button-group { margin-top: 40px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.button-group button { background-color: #003366; color: white; border: none; padding: 14px 25px; font-size: 16px; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+.button-group button:hover { background-color: #0055aa; }
+
+/* Responsive */
+@media (max-width: 500px) {
+    .button-group { flex-direction: column; }
+    .form-box { width: 90%; padding: 25px; }
+    table { width: 95%; }
+}
